@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_partner_form_inherit_base" model="ir.ui.view">
+    <field name="name">res.partner.view.form.inherit</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form" />
+    <field name="arch" type="xml">
+      <field name="company_type" position="after">
+        <field name="ffck_network" />
+        <label for="ffck_network" />
+      </field>
+      <xpath expr="//notebook/page[1]" position="before">
+        <page name="ffck_info" string="FFCK Info" attrs="{'invisible':[('ffck_network','!=',True)]}">
+          <group name="ffck_main">
+            <group name="ffck_common">
+              <separator colspan="2" string="Licensee information"
+                attrs="{'invisible':[('company_type','!=','individual')]}" />
+              <separator colspan="2" string="Structure information"
+                attrs="{'invisible':[('company_type','!=','company')]}" />
+              <field name="partner_code" />
+              <field name="partner_scale" attrs="{'invisible': [('company_type','=','individual')]}" />
+              <field name="ffck_type_id" widget="selection" attrs="{'invisible': [('company_type','=','individual')]}" />
+            </group>
+            <group name="ffck_network" string="Network" attrs="{'invisible': [('partner_scale', '=', 'lic')]}">
+              <field name="ffck_partner_id" />
+              <field name="crck_partner_id" attrs="{'invisible': [('partner_scale', '=', 'nat')]}" />
+              <field name="cdck_partner_id" attrs="{'invisible': [('partner_scale', 'in', ['nat', 'reg'])]}" />
+            </group>
+          </group>
+          <group name="ffck_data">
+            <group string="Structure dates">
+              <field name="structure_create_date" />
+              <field name="first_membership_date" />
+            </group>
+          </group>
+        </page>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>

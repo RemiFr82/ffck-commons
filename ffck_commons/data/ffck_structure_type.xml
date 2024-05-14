@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+
+    <record id="ffck_structure_type_ffck" model="ffck.structure.type">
+      <field name="name">FFCK</field>
+      <field name="short">FFCK</field>
+      <field name="scale">nat</field>
+    </record>
+
+    <record id="ffck_structure_type_crck" model="ffck.structure.type">
+      <field name="name">CRCK</field>
+      <field name="short">CRCK</field>
+      <field name="scale">reg</field>
+    </record>
+
+    <record id="ffck_structure_type_cdck" model="ffck.structure.type">
+      <field name="name">CDCK</field>
+      <field name="short">CDCK</field>
+      <field name="scale">dep</field>
+    </record>
+
+    <record id="ffck_structure_type_club" model="ffck.structure.type">
+      <field name="name">Affiliate member</field>
+      <field name="short">CLUB</field>
+      <field name="scale">loc</field>
+    </record>
+
+    <record id="ffck_structure_type_agra" model="ffck.structure.type" forcecreate="0">
+      <field name="name">Type A agreed member</field>
+      <field name="short">AGRA</field>
+      <field name="scale">loc</field>
+    </record>
+
+    <record id="ffck_structure_type_agrb" model="ffck.structure.type" forcecreate="0">
+      <field name="name">Type B agreed member</field>
+      <field name="short">AGRB</field>
+      <field name="scale">loc</field>
+    </record>
+
+    <record id="ffck_structure_type_conv" model="ffck.structure.type" forcecreate="0">
+      <field name="name">Conventioned member</field>
+      <field name="short">CONV</field>
+      <field name="scale">loc</field>
+    </record>
+
+  </data>
+
+</odoo>
