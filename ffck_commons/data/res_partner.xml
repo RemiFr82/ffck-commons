@@ -20,7 +20,7 @@
       <field name="siret">78572437800050</field>
       <field name="ffck_network" eval="True" />
       <field name="partner_code">0</field>
-      <field name="partner_scale">nat</field>
+      <field name="partner_scale">1</field>
       <field name="ffck_structure_type_id" ref="ffck_structure_type_ffck" />
     </record>
 

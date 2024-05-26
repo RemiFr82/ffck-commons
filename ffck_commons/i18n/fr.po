@@ -135,6 +135,12 @@ msgid "Local"
 msgstr "Locale"
 
 #. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__license_partner_id
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__license_partner_id
+msgid "Local partner"
+msgstr "Structure Locale"
+
+#. module: ffck_commons
 #: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__name
 msgid "Name"
 msgstr "Nom"

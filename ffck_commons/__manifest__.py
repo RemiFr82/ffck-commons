@@ -11,16 +11,16 @@
     "category": "Technical",
     "depends": [
         "base",
+        "contacts",
         "l10n_fr_association",
-        "partner_contact_email2",
-        "partner_contact_phones2",
-        "partner_firstname",
-        "partner_multi_relation",
         "partner_contact_age_range",
         "partner_contact_birthdate",
         "partner_contact_gender",
+        "partner_contact_email2",
         "partner_contact_nationality",
         "partner_contact_personal_information_page",
+        "partner_contact_phones2",
+        "partner_firstname",
     ],
     "data": [
         # Base data
@@ -30,6 +30,7 @@
         "security/ir.model.access.csv",
         # Views
         "views/res_partner.xml",
+        "views/ffck_structure_type.xml",
         # Wizards
         # 'wizards/ir_model_wizard.xml',
         # Reports

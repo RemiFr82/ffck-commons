@@ -22,7 +22,8 @@
                 attrs="{'invisible': [('is_company','=',True)]}" />
               <label for="partner_code" string="Structure code"
                 attrs="{'invisible': [('is_company','=',False)]}" />
-              <field name="partner_code" nolabel="1" />
+              <field name="partner_code" nolabel="1" readonly="1" />
+              <!-- <field name="partner_code" groups="base.group_no_one" /> -->
               <!-- <field name="partner_code" nolabel="1" attrs="{'readonly':[('partner_code_editable','=',False)]}" />
               <field name="partner_code_editable" invisible="1" /> -->
               <field name="partner_scale" attrs="{'invisible': [('is_company','=',False)]}" />
@@ -30,10 +31,11 @@
                 attrs="{'invisible': [('is_company','=',False)]}" />
             </group>
             <group name="ffck_network" string="Network" class="o_label_nowrap"
-              attrs="{'invisible': [('partner_scale', '=', 'lic')]}">
+              attrs="{'invisible': [('partner_scale', '=', '5')]}">
               <field name="ffck_partner_id" />
-              <field name="crck_partner_id" attrs="{'invisible': [('partner_scale', '=', 'nat')]}" />
-              <field name="cdck_partner_id" attrs="{'invisible': [('partner_scale', 'in', ['nat', 'reg'])]}" />
+              <field name="crck_partner_id" attrs="{'invisible': [('partner_scale', '=', '1')]}" />
+              <field name="cdck_partner_id" attrs="{'invisible': [('partner_scale', 'in', ['1', '2'])]}" />
+              <field name="local_partner_id" attrs="{'invisible': [('partner_scale', 'in', ['1', '2', '3'])]}" />
             </group>
           </group>
           <group name="ffck_membership">
@@ -44,6 +46,37 @@
         </page>
       </xpath>
     </field>
+  </record>
+
+  <record id="view_res_partner_filter_inherit_base" model="ir.ui.view">
+    <field name="name">res.partner.view.search.inherit</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_res_partner_filter" />
+    <field name="arch" type="xml">
+      <filter name="type_person" position="attributes">
+        <attribute name="string">Persons</attribute>
+      </filter>
+      <filter name="type_company" position="attributes">
+        <attribute name="string">Structures</attribute>
+      </filter>
+      <group name="group_by" position="inside">
+        <separator />
+        <filter name="partner_scale" string="Partner scale" domain="[]" context="{'group_by' : 'partner_scale'}" />
+        <filter name="ffck_structure_type" string="Structure type"
+          context="{'group_by' : 'ffck_structure_type_id'}" />
+      </group>
+    </field>
+  </record>
+
+  <menuitem
+    id="ffck_contacts_config_menu"
+    name="FFCK params"
+    parent="contacts.res_partner_menu_config"
+    sequence="4" />
+
+  <record id="partner_multi_relation.menu_res_partner_relation" model="ir.ui.menu">
+    <field name="parent_id" ref="contacts.res_partner_menu_config" />
+    <field name="sequence">4</field>
   </record>
 
 </odoo>
