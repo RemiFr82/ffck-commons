@@ -1,0 +1,201 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ffck_commons
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20230613\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-26 13:55+0000\n"
+"PO-Revision-Date: 2024-05-26 13:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__cdck_partner_id
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__cdck_partner_id
+msgid "CDCK partner"
+msgstr "CDCK"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__crck_partner_id
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__crck_partner_id
+msgid "CRCK partner"
+msgstr "CRCK"
+
+#. module: ffck_commons
+#: model:ir.model,name:ffck_commons.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: ffck_commons
+#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__dep
+#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__dep
+msgid "Departmental"
+msgstr "Départementale"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__ffck_partner_code
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__ffck_partner_code
+#: model_terms:ir.ui.view,arch_db:ffck_commons.view_partner_form_inherit_base
+msgid "FFCK"
+msgstr ""
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__cdck_partner_code
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__crck_partner_code
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__partner_code
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__cdck_partner_code
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__crck_partner_code
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__partner_code
+msgid "FFCK code"
+msgstr "Code FFCK"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__ffck_network
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__ffck_network
+msgid "FFCK network"
+msgstr "Réseau FFCK"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__ffck_partner_id
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__ffck_partner_id
+msgid "FFCK partner"
+msgstr "FFCK"
+
+#. module: ffck_commons
+#: model:ir.model,name:ffck_commons.model_ffck_structure_type
+msgid "FFCK structure type"
+msgstr "Type de structure"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__id
+msgid "ID"
+msgstr ""
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: ffck_commons
+#: model_terms:ir.ui.view,arch_db:ffck_commons.view_partner_form_inherit_base
+msgid "License code"
+msgstr "N° de licence"
+
+#. module: ffck_commons
+#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__lic
+#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__lic
+msgid "Licensee"
+msgstr "Licencié"
+
+#. module: ffck_commons
+#: model_terms:ir.ui.view,arch_db:ffck_commons.view_partner_form_inherit_base
+msgid "Licensee information"
+msgstr "Informations licencié"
+
+#. module: ffck_commons
+#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__loc
+#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__loc
+msgid "Local"
+msgstr "Locale"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: ffck_commons
+#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__nat
+#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__nat
+msgid "National"
+msgstr "Nationale"
+
+#. module: ffck_commons
+#: model_terms:ir.ui.view,arch_db:ffck_commons.view_partner_form_inherit_base
+msgid "Network"
+msgstr "Réseau fédéral"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: ffck_commons
+#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__reg
+#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__reg
+msgid "Regional"
+msgstr "Régionale"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__scale
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__partner_scale
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__partner_scale
+msgid "Scale"
+msgstr "Échelle"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__short
+msgid "Short"
+msgstr "Initiales"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__first_membership_date
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__first_membership_date
+msgid "Structure 1st membership"
+msgstr "Première adhésion"
+
+#. module: ffck_commons
+#: model_terms:ir.ui.view,arch_db:ffck_commons.view_partner_form_inherit_base
+msgid "Structure code"
+msgstr "Code structure"
+
+#. module: ffck_commons
+#: model_terms:ir.ui.view,arch_db:ffck_commons.view_partner_form_inherit_base
+msgid "Structure dates"
+msgstr "Dates de la structure"
+
+#. module: ffck_commons
+#: model_terms:ir.ui.view,arch_db:ffck_commons.view_partner_form_inherit_base
+msgid "Structure information"
+msgstr "Infos de la structure"
+
+#. module: ffck_commons
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__ffck_structure_type_id
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__ffck_structure_type_id
+msgid "Structure type"
+msgstr "Type de structure"

@@ -11,4 +11,4 @@ class FfckStructureType(models.Model):
     short = fields.Char("Short", required=True, index=True)
     scale = fields.Selection(SCALES, string="Scale", required=True)
     active = fields.Boolean(string="Active", default=True)
-    parent_id = fields.Many2one("ffck.structure.type", string="parent")
+    parent_id = fields.Many2one(comodel_name="ffck.structure.type", string="Parent")

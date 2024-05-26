@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- <record id="ir_module_category_application" model="ir.module.category">
+    <field name="name">Application</field>
+    <field name="sequence"></field>
+  </record> -->
+
+  <!-- <record id="res_group_name" model="res.groups">
+    <field name="name">Group name</field>
+    <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+    <field name="category_id" ref="ir_module_category_proapn_membership" />
+  </record> -->
+
+</odoo>

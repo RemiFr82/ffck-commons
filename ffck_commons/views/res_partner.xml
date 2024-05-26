@@ -6,31 +6,38 @@
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="base.view_partner_form" />
     <field name="arch" type="xml">
-      <field name="company_type" position="after">
+      <h1 position="after">
         <field name="ffck_network" />
         <label for="ffck_network" />
-      </field>
-      <xpath expr="//notebook/page[1]" position="before">
-        <page name="ffck_info" string="FFCK Info" attrs="{'invisible':[('ffck_network','!=',True)]}">
+      </h1>
+      <xpath expr="//notebook/page[1]" position="after">
+        <page name="ffck" string="FFCK" attrs="{'invisible':[('ffck_network','!=',True)]}">
           <group name="ffck_main">
-            <group name="ffck_common">
+            <group name="ffck_common" class="o_label_nowrap">
               <separator colspan="2" string="Licensee information"
-                attrs="{'invisible':[('company_type','!=','individual')]}" />
+                attrs="{'invisible':[('is_company','=',True)]}" />
               <separator colspan="2" string="Structure information"
-                attrs="{'invisible':[('company_type','!=','company')]}" />
-              <field name="partner_code" />
-              <field name="partner_scale" attrs="{'invisible': [('company_type','=','individual')]}" />
-              <field name="ffck_type_id" widget="selection" attrs="{'invisible': [('company_type','=','individual')]}" />
+                attrs="{'invisible':[('is_company','=',False)]}" />
+              <label for="partner_code" string="License code"
+                attrs="{'invisible': [('is_company','=',True)]}" />
+              <label for="partner_code" string="Structure code"
+                attrs="{'invisible': [('is_company','=',False)]}" />
+              <field name="partner_code" nolabel="1" />
+              <!-- <field name="partner_code" nolabel="1" attrs="{'readonly':[('partner_code_editable','=',False)]}" />
+              <field name="partner_code_editable" invisible="1" /> -->
+              <field name="partner_scale" attrs="{'invisible': [('is_company','=',False)]}" />
+              <field name="ffck_structure_type_id" widget="selection"
+                attrs="{'invisible': [('is_company','=',False)]}" />
             </group>
-            <group name="ffck_network" string="Network" attrs="{'invisible': [('partner_scale', '=', 'lic')]}">
+            <group name="ffck_network" string="Network" class="o_label_nowrap"
+              attrs="{'invisible': [('partner_scale', '=', 'lic')]}">
               <field name="ffck_partner_id" />
               <field name="crck_partner_id" attrs="{'invisible': [('partner_scale', '=', 'nat')]}" />
               <field name="cdck_partner_id" attrs="{'invisible': [('partner_scale', 'in', ['nat', 'reg'])]}" />
             </group>
           </group>
-          <group name="ffck_data">
+          <group name="ffck_membership">
             <group string="Structure dates">
-              <field name="structure_create_date" />
               <field name="first_membership_date" />
             </group>
           </group>

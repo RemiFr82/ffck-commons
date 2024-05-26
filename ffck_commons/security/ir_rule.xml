@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- <data noupdate="1"> -->
+  <data>
+
+    <!-- ir.model -->
+    <!-- <record id="ir_rule_ir_model_res_group" model="ir.rule">
+      <field name="name"></field>
+      <field name="model_id" ref="module.model_ir_model" />
+      <field name="domain_force">[]</field>
+      <field name="groups" eval="[(4, ref('module.res_group'))]" />
+      <field name="perm_read" eval="True" />
+      <field name="perm_write" eval="True" />
+      <field name="perm_create" eval="False" />
+      <field name="perm_unlink" eval="False" />
+    </record> -->
+
+  </data>
+</odoo>

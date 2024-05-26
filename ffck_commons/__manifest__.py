@@ -11,6 +11,7 @@
     "category": "Technical",
     "depends": [
         "base",
+        "l10n_fr_association",
         "partner_contact_email2",
         "partner_contact_phones2",
         "partner_firstname",
@@ -26,7 +27,7 @@
         "data/ffck_structure_type.xml",
         "data/res_partner.xml",
         # Security
-        # 'security/res_groups.xml',
+        "security/ir.model.access.csv",
         # Views
         "views/res_partner.xml",
         # Wizards

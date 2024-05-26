@@ -1,17 +1,5 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
-from odoo.osv.expression import OR, AND
-
-# STRUCTURE_TYPES = [
-#     ('ffck', 'Federal'),
-#     ('crck', 'Region'),
-#     ('cdck', 'Department'),
-#     ('club', 'Affiliate'),
-#     ('agra', 'Agreement A'),
-#     ('agrb', 'Agreement B'),
-#     ('conv', 'Convention'),
-#     ('asso', 'Associated'),
-# ]
 
 SCALES = [
     ("nat", "National"),
@@ -27,7 +15,7 @@ class ResPartner(models.Model):
 
     @api.model
     def _get_ffck_partner(self):
-        ffck = self.env.ref("ffck_commons.ffck_partner")
+        ffck = self.env.ref("ffck_commons.res_partner_ffck", raise_if_not_found=False)
         main = self.env.ref("base.main_partner")
         if main.ref == "FFCK":
             if ffck.active:
@@ -37,8 +25,6 @@ class ResPartner(models.Model):
             return ffck
 
     # Partner fields
-    structure_create_date = fields.Date("Structure creation")
-    # FFCK fields
     ffck_network = fields.Boolean(string="FFCK network")
     first_membership_date = fields.Date("Structure 1st membership")
     # Structure typing
@@ -46,29 +32,35 @@ class ResPartner(models.Model):
         selection=SCALES,
         string="Scale",
     )
-    ffck_type_id = fields.Many2one(
+    ffck_structure_type_id = fields.Many2one(
         comodel_name="ffck.structure.type", string="Structure type"
     )
-    # structure_type = fields.Selection(
-    #     selection=STRUCTURE_TYPES,
-    #     string="Structure",
-    # )
+    partner_code = fields.Char(string="FFCK code", size=6, index=True)
+    # partner_code_editable = fields.Boolean(string="FFCK code editable", compute="_can_edit_partner_code")
+    # FFCK
     ffck_partner_id = fields.Many2one(
         "res.partner",
         string="FFCK partner",
         default=_get_ffck_partner,
         ondelete="restrict",
     )
-    ffck_code = fields.Char(string="FFCK", default="0", readonly=True)
+    ffck_partner_code = fields.Char(string="FFCK", default="0", readonly=True)
+    # CRCK
     crck_partner_id = fields.Many2one(
-        "res.partner", string="CRCK partner", index=True, ondelete="restrict"
+        "res.partner",
+        string="CRCK partner",
+        index=True,
+        ondelete="restrict",
     )
-    crck_code = fields.Char(related="crck_partner_id.partner_code", store=True)
+    crck_partner_code = fields.Char(related="crck_partner_id.partner_code", store=True)
+    # CDCK
     cdck_partner_id = fields.Many2one(
-        "res.partner", string="CDCK partner", index=True, ondelete="restrict"
+        "res.partner",
+        string="CDCK partner",
+        index=True,
+        ondelete="restrict",
     )
-    cdck_code = fields.Char(related="cdck_partner_id.partner_code", store=True)
-    partner_code = fields.Char(string="FFCK code", size=6, index=True, readonly=True)
+    cdck_partner_code = fields.Char(related="cdck_partner_id.partner_code", store=True)
 
     @api.model
     def name_search(self, name="", args=None, operator="ilike", limit=100):
@@ -112,7 +104,7 @@ class ResPartner(models.Model):
 
     # ONCHANGES
 
-    @api.onchange("partner_code")
+    @api.onchange("partner_code", "company_type", "ffck_network")
     def onchange_partner_code(self):
         if self.ffck_network and self.company_type == "individual":
             code = self.partner_code
@@ -121,11 +113,11 @@ class ResPartner(models.Model):
             elif len(code) > 6:
                 self.update({"partner_code": code[:-6]})
 
-    @api.onchange("company_type", "partner_scale", "ffck_type_id")
+    @api.onchange("company_type", "partner_scale", "ffck_structure_type_id")
     def onchange_comp_type(self):
         if self.company_type == "individual":
             self.update({"partner_scale": "lic"})
         elif self.partner_scale == "lic":
             self.update({"partner_scale": False})
-        elif self.ffck_type_id:
-            self.update({"partner_scale": self.ffck_type_id.scale})
+        elif self.ffck_structure_type_id:
+            self.update({"partner_scale": self.ffck_structure_type_id.scale})

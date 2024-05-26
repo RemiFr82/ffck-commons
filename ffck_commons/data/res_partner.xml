@@ -2,18 +2,26 @@
 <odoo>
   <data noupdate="1">
 
-    <record id="res_partner_ffck" model="res.partner" forcecreate="0">
+    <record id="res_partner_ffck" model="res.partner">
       <field name="name">Fédération Française Canoë-Kayak et Sports de Pagaie</field>
       <field name="is_company" eval="True" />
-      <field name="street"></field>
-      <field name="street2"></field>
-      <field name="zip"></field>
-      <field name="city"></field>
+      <field name="association" eval="True" />
+      <field name="street">Stade nautique olympique d’Ile-de-France</field>
+      <field name="street2">Route de Torcy</field>
+      <field name="zip">77360</field>
+      <field name="city">VAIRES SUR MARNE</field>
       <field name="country_id" ref="base.fr" />
-      <field name="vat"></field>
-      <field name="phone"></field>
-      <field name="email"></field>
-      <field name="website"></field>
+      <field name="vat">FR08785724378</field>
+      <field name="phone">+33 1 45 11 08 50</field>
+      <field name="email">ffck@ffck.org</field>
+      <field name="website">https://ffck.org</field>
+      <field name="ref">FFCK</field>
+      <field name="company_registry">W941001049</field>
+      <field name="siret">78572437800050</field>
+      <field name="ffck_network" eval="True" />
+      <field name="partner_code">0</field>
+      <field name="partner_scale">nat</field>
+      <field name="ffck_structure_type_id" ref="ffck_structure_type_ffck" />
     </record>
 
   </data>
