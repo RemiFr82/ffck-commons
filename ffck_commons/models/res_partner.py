@@ -18,7 +18,8 @@ class ResPartner(models.Model):
         store=True,
     )
     ffck_structure_type_id = fields.Many2one(
-        comodel_name="ffck.structure.type", string="Structure type"
+        comodel_name="ffck.structure.type",
+        string="Structure type",
     )
     partner_code = fields.Char(string="FFCK code", size=6, index=True)
     # partner_code_editable = fields.Boolean(string="FFCK code editable", compute="_can_edit_partner_code")
@@ -110,10 +111,7 @@ class ResPartner(models.Model):
             if partner.company_type == "individual":
                 partner.partner_scale = "5"
             else:
-                partner.partner_scale = (
-                    partner.ffck_structure_type_id
-                    and partner.ffck_structure_type_id.scale
-                )
+                partner.partner_scale = partner.ffck_structure_type_id.scale
 
     def _get_ffck_partner(self):
         ffck = self.env.ref("ffck_commons.res_partner_ffck", raise_if_not_found=False)
@@ -136,8 +134,9 @@ class ResPartner(models.Model):
                 ("state_id", "in", states.ids),
             ]
         )
-        crck_by_state = {(crck.state_id, crck) for crck in crck_ok}
-        states_ok = states - crck_ok.mapped("state_id")
+        crck_by_state = {crck.state_id: crck for crck in crck_ok}
+        print(crck_by_state)
+        states_ok = states & crck_ok.mapped("state_id")
         concerned = self.filtered(
             lambda rp: rp.ffck_network
             and int(rp.partner_scale) >= 3
@@ -160,8 +159,8 @@ class ResPartner(models.Model):
                 ("country_department_id", "in", depts.ids),
             ]
         )
-        cdck_by_dept = {(cdck.country_department_id, cdck) for cdck in cdck_ok}
-        depts_ok = depts - cdck_ok.mapped("country_department_id")
+        cdck_by_dept = {cdck.country_department_id: cdck for cdck in cdck_ok}
+        depts_ok = depts & cdck_ok.mapped("country_department_id")
         concerned = self.filtered(
             lambda rp: rp.ffck_network
             and int(rp.partner_scale) >= 4

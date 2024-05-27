@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0-20230613\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-26 13:55+0000\n"
-"PO-Revision-Date: 2024-05-26 13:55+0000\n"
+"POT-Creation-Date: 2024-05-26 23:35+0000\n"
+"PO-Revision-Date: 2024-05-26 23:35+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__active
 msgid "Active"
 msgstr "Actif"
+
+#. module: ffck_commons
+#: model:ffck.structure.type,name:ffck_commons.ffck_structure_type_club
+msgid "Affiliate member"
+msgstr "Membre affilié"
 
 #. module: ffck_commons
 #: model:ir.model.fields,field_description:ffck_commons.field_res_partner__cdck_partner_id
@@ -38,6 +43,11 @@ msgid "Contact"
 msgstr ""
 
 #. module: ffck_commons
+#: model:ffck.structure.type,name:ffck_commons.ffck_structure_type_conv
+msgid "Conventioned member"
+msgstr "Membre conventionné"
+
+#. module: ffck_commons
 #: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__create_uid
 msgid "Created by"
 msgstr "Créé par"
@@ -48,10 +58,15 @@ msgid "Created on"
 msgstr "Créé le"
 
 #. module: ffck_commons
-#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__dep
-#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__dep
+#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__3
+#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__3
 msgid "Departmental"
 msgstr "Départementale"
+
+#. module: ffck_commons
+#: model:ffck.structure.type,name:ffck_commons.ffck_structure_type_cdck
+msgid "Departmental Committee"
+msgstr "Comité Départemental"
 
 #. module: ffck_commons
 #: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__display_name
@@ -68,9 +83,11 @@ msgstr ""
 #. module: ffck_commons
 #: model:ir.model.fields,field_description:ffck_commons.field_res_partner__cdck_partner_code
 #: model:ir.model.fields,field_description:ffck_commons.field_res_partner__crck_partner_code
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__local_partner_code
 #: model:ir.model.fields,field_description:ffck_commons.field_res_partner__partner_code
 #: model:ir.model.fields,field_description:ffck_commons.field_res_users__cdck_partner_code
 #: model:ir.model.fields,field_description:ffck_commons.field_res_users__crck_partner_code
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__local_partner_code
 #: model:ir.model.fields,field_description:ffck_commons.field_res_users__partner_code
 msgid "FFCK code"
 msgstr "Code FFCK"
@@ -82,6 +99,11 @@ msgid "FFCK network"
 msgstr "Réseau FFCK"
 
 #. module: ffck_commons
+#: model:ir.ui.menu,name:ffck_commons.ffck_contacts_config_menu
+msgid "FFCK params"
+msgstr "Config FFCK"
+
+#. module: ffck_commons
 #: model:ir.model.fields,field_description:ffck_commons.field_res_partner__ffck_partner_id
 #: model:ir.model.fields,field_description:ffck_commons.field_res_users__ffck_partner_id
 msgid "FFCK partner"
@@ -91,6 +113,16 @@ msgstr "FFCK"
 #: model:ir.model,name:ffck_commons.model_ffck_structure_type
 msgid "FFCK structure type"
 msgstr "Type de structure"
+
+#. module: ffck_commons
+#: model:ir.actions.act_window,name:ffck_commons.ffck_structure_type_action
+msgid "FFCK structure types"
+msgstr "Types de structures"
+
+#. module: ffck_commons
+#: model:ffck.structure.type,name:ffck_commons.ffck_structure_type_ffck
+msgid "Federation"
+msgstr "Fédération"
 
 #. module: ffck_commons
 #: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__id
@@ -118,8 +150,8 @@ msgid "License code"
 msgstr "N° de licence"
 
 #. module: ffck_commons
-#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__lic
-#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__lic
+#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__5
+#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__5
 msgid "Licensee"
 msgstr "Licencié"
 
@@ -129,16 +161,16 @@ msgid "Licensee information"
 msgstr "Informations licencié"
 
 #. module: ffck_commons
-#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__loc
-#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__loc
+#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__4
+#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__4
 msgid "Local"
 msgstr "Locale"
 
 #. module: ffck_commons
-#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__license_partner_id
-#: model:ir.model.fields,field_description:ffck_commons.field_res_users__license_partner_id
+#: model:ir.model.fields,field_description:ffck_commons.field_res_partner__local_partner_id
+#: model:ir.model.fields,field_description:ffck_commons.field_res_users__local_partner_id
 msgid "Local partner"
-msgstr "Structure Locale"
+msgstr "Structure locale"
 
 #. module: ffck_commons
 #: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__name
@@ -146,8 +178,8 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: ffck_commons
-#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__nat
-#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__nat
+#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__1
+#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__1
 msgid "National"
 msgstr "Nationale"
 
@@ -162,10 +194,25 @@ msgid "Parent"
 msgstr ""
 
 #. module: ffck_commons
-#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__reg
-#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__reg
+#: model_terms:ir.ui.view,arch_db:ffck_commons.view_res_partner_filter_inherit_base
+msgid "Partner scale"
+msgstr "Échelle"
+
+#. module: ffck_commons
+#: model_terms:ir.ui.view,arch_db:ffck_commons.view_res_partner_filter_inherit_base
+msgid "Persons"
+msgstr "Personnes"
+
+#. module: ffck_commons
+#: model:ir.model.fields.selection,name:ffck_commons.selection__ffck_structure_type__scale__2
+#: model:ir.model.fields.selection,name:ffck_commons.selection__res_partner__partner_scale__2
 msgid "Regional"
 msgstr "Régionale"
+
+#. module: ffck_commons
+#: model:ffck.structure.type,name:ffck_commons.ffck_structure_type_crck
+msgid "Regional Committee"
+msgstr "Comité Régional"
 
 #. module: ffck_commons
 #: model:ir.model.fields,field_description:ffck_commons.field_ffck_structure_type__scale
@@ -203,5 +250,26 @@ msgstr "Infos de la structure"
 #. module: ffck_commons
 #: model:ir.model.fields,field_description:ffck_commons.field_res_partner__ffck_structure_type_id
 #: model:ir.model.fields,field_description:ffck_commons.field_res_users__ffck_structure_type_id
+#: model_terms:ir.ui.view,arch_db:ffck_commons.view_res_partner_filter_inherit_base
 msgid "Structure type"
 msgstr "Type de structure"
+
+#. module: ffck_commons
+#: model:ir.ui.menu,name:ffck_commons.ffck_structure_type_menu
+msgid "Structure types"
+msgstr "Types de structure"
+
+#. module: ffck_commons
+#: model_terms:ir.ui.view,arch_db:ffck_commons.view_res_partner_filter_inherit_base
+msgid "Structures"
+msgstr "Structures"
+
+#. module: ffck_commons
+#: model:ffck.structure.type,name:ffck_commons.ffck_structure_type_agra
+msgid "Type A agreed member"
+msgstr "Membre agréé Type A"
+
+#. module: ffck_commons
+#: model:ffck.structure.type,name:ffck_commons.ffck_structure_type_agrb
+msgid "Type B agreed member"
+msgstr "Membre agréé Type B"
